@@ -1,8 +1,10 @@
 package com.elbetasal.examples;
 
-public class Movie {
+import static com.elbetasal.examples.MovieCatalogWithEnumMethods.Type.*;
 
-    public Movie(Type type) {
+public class MovieCatalogWithEnumMethods {
+
+    public MovieCatalogWithEnumMethods(Type type) {
         this.type = type;
     }
 
@@ -16,7 +18,7 @@ public class Movie {
         CHILD{
             @Override
             public int computePrice(int days) {
-                return days * 3;
+                return 5;
             }
         };
 
@@ -32,8 +34,8 @@ public class Movie {
 
 
     public static void main(String[] args) {
-        System.out.println(new Movie(Type.REGULAR).computePrice(1));
-        System.out.println(new Movie(Type.CHILD).computePrice(1));
+        System.out.println(new MovieCatalogWithEnumMethods(REGULAR).computePrice(1));
+        System.out.println(new MovieCatalogWithEnumMethods(CHILD).computePrice(1));
     }
 
 
